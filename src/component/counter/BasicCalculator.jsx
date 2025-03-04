@@ -38,28 +38,37 @@ const BasicCalculator = () => {
   };
 
   return (
-    <div>
+    <div className="calculator-container">
       <h1>Basic Calculator</h1>
-      <input
-        type="number"
-        value={num1}
-        onChange={(e) => setNum1(e.target.value)}
-        placeholder="Enter first number"
-      />
-      <select  className='select' style={{ marginLeft: '8px' }} value={operation} onChange={(e) => setOperation(e.target.value)}>
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="x">×</option>
-        <option value="/">/</option>
-      </select>
-      <input className='input' style={{ marginLeft: '8px' }} 
-        type="number"
-        value={num2}
-        onChange={(e) => setNum2(e.target.value)}
-        placeholder="Enter second number"
-      />
-      <button className='btn' style={{ marginLeft: '8px' }} onClick={calculate}>=</button>
-      <div className='result' style={{ paddingTop: '10px', fontSize: '30px', fontWeight: 'bold', color: 'green' }}>Result = {result}</div>
+      <div style={{ marginBottom: '20px' }}>
+        <input
+          type="number"
+          value={num1}
+          onChange={(e) => setNum1(e.target.value)}
+          placeholder="Enter first number"
+        />
+        <select 
+          className='select' 
+          style={{ margin: '0 8px' }} 
+          value={operation} 
+          onChange={(e) => setOperation(e.target.value)}
+        >
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="x">×</option>
+          <option value="/">/</option>
+        </select>
+        <input
+          type="number"
+          value={num2}
+          onChange={(e) => setNum2(e.target.value)}
+          placeholder="Enter second number"
+        />
+        <button className='btn' style={{ marginLeft: '8px' }} onClick={calculate}>=</button>
+      </div>
+      <div style={{ fontSize: '30px', fontWeight: 'bold', color: 'green' }}>
+        Result = {result}
+      </div>
     </div>
   );
 };
